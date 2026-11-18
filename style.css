@@ -1,0 +1,149 @@
+header{
+    background-color:rgb(72, 103, 72);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+nav lu {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+nav li {
+    display: inline;
+    margin: 15px;
+} 
+nav a {
+    color:white;
+    text-decoration: none;
+    font-size: 20px;
+}
+#accueil{
+    text-align: center;
+    padding: 40px 20px;
+}
+#accueil h2{
+    color: rgb(133, 133, 19);
+    font-size: 35px;
+    
+
+}
+#accueil h2{
+    font-size: 18px;
+}
+#accueil a{
+    display: inline-block;
+    background-color: #17473b;
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+    margin: 15px;
+    border-radius: 5px;
+    padding: 12px , 20px;
+
+
+
+}
+#accueil img{
+    margin: 20px;
+    width: 80%;
+    height: 350px;
+    object-fit: cover;
+    display: block;
+    margin: 20px auto;
+    
+}
+#nous h1{
+     color: #17473b;
+     font-size: 30px;
+}
+#nous p{
+     margin: 15px auto;
+     font-size: 20px;
+     color: #17473b;
+     line-height: 1.6;
+}
+#nous{
+    background-color: #ffffff;
+    padding: 40px 20px;
+    text-align:center ;
+
+}
+#activités{
+    background-color: #ffffff;
+    padding: 40px 20px;
+    text-align:center ;
+
+}
+.cartes {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.cartes img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+.cartes article {
+    width: 250px;
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+}
+#decouvert{
+     background-color: #ffffff;
+    padding: 40px 20px;
+    text-align: center;
+}
+#decouvert h2{
+    color: #17473b;
+    font-size: 30px;
+
+
+}
+#decouvert ul{
+     list-style: none;
+    padding: 0;
+}
+#decouvert li{
+    font-size: 20px;
+    padding: 10px;
+    color:rgb(10, 44, 10);
+    margin: 15px auto;
+    border-radius: 8px;
+
+}
+#reservation {
+    background-color: #17473b;
+    color: white;
+    text-align: center;
+    padding: 40px;
+}
+
+#reservation h2 {
+    font-size: 30px;
+}
+
+#reservation a {
+    display: inline-block;
+    background-color: #e5a15c;
+    color: white;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+

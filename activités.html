@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <script></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Activités - Cap Bon Explorer</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="index.html">Cap Bon Explorer</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menuNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+            <li class="nav-item"><a class="nav-link active" href="activites.html">Activités</a></li>
+            <li class="nav-item"><a class="nav-link" href="agenda.html">Agenda</a></li>
+            <li class="nav-item"><a class="nav-link" href="reservation.html">Réservation</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact/FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container my-4">
+    <h1 class="text-center mb-4">Catalogue d'activités</h1>
+
+    <!-- Zone Recherche + Filtre -->
+    <div class="card p-3 mb-4 bg-light">
+      <div class="row g-3">
+        <div class="col-md-6">
+          <label for="recherche" class="form-label fw-bold">Rechercher :</label>
+          <input type="text" id="recherche" class="form-control" placeholder="Ex: poterie, Nabeul...">
+        </div>
+        <div class="col-md-6">
+          <label for="categorie" class="form-label fw-bold">Catégorie :</label>
+          <select id="categorie" class="form-select">
+            <option value="Toutes">Toutes</option>
+            <option value="Culture">Culture</option>
+            <option value="Artisanat">Artisanat</option>
+            <option value="Nature">Nature</option>
+            <option value="Découverte">Découverte</option>
+          </select>
+        </div>
+      </div>
+      <p id="compteur" class="mt-3 mb-0 fw-bold text-primary">8 activités trouvées</p>
+    </div>
+
+    <!-- Message si aucun résultat -->
+    <div id="aucunResultat" class="alert alert-warning text-center d-none">
+      Aucune activité trouvée.
+    </div>
+
+    <!-- Grille des 8 activités -->
+    <div class="row g-4" id="grilleActivites">
+
+      <!-- Carte A01 -->
+      <div class="col-12 col-md-6 col-lg-3 carte-item" data-categorie="Culture">
+        <div class="card h-100">
+          <img src="image/11.webp" class="card-img-top" alt="Médina Nabeul">
+          <div class="card-body d-flex flex-column">
+            <span class="badge bg-info text-dark mb-2 align-self-start">Culture</span>
+            <h2 class="card-title h5">Découverte de la médina - Nabeul</h2>
+            <p class="text-muted small">Durée : 2 h</p>
+            <p class="fw-bold text-primary mt-auto">20 TND</p>
+            <button class="btn btn-outline-primary btn-sm mb-2" onclick="voirDetails('Découverte de la médina - Nabeul', 'Culture | 2 h | 20 TND', 'Parcourez les ruelles animées de la vieille ville de Nabeul avec un guide local. Vous découvrirez l architecture traditionnelle et les anciens ateliers d artisans. Une belle immersion dans l histoire de la ville.')">Voir les détails</button>
+            <a href="reservation.html" class="btn btn-primary btn-sm">Réserver</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carte A02 -->
+      <div class="col-12 col-md-6 col-lg-3 carte-item" data-categorie="Artisanat">
+        <div class="card h-100">
+          <img src="image/OIP.webp" class="card-img-top" alt="Poterie Nabeul">
+          <div class="card-body d-flex flex-column">
+            <span class="badge bg-info text-dark mb-2 align-self-start">Artisanat</span>
+            <h2 class="card-title h5">Atelier d'initiation à la poterie - Nabeul</h2>
+            <p class="text-muted small">Durée : 1 h 30</p>
+            <p class="fw-bold text-primary mt-auto">35 TND</p>
+            <button class="btn btn-outline-primary btn-sm mb-2" onclick="voirDetails('Atelier d initiation à la poterie - Nabeul', 'Artisanat | 1 h 30 | 35 TND', 'Découvrez le célèbre artisanat de Nabeul en mettant les mains dans l argile. Un artisan vous montrera comment utiliser le tour de potier étape par étape. Vous pourrez garder votre petite création en souvenir.')">Voir les détails</button>
+            <a href="reservation.html" class="btn btn-primary btn-sm">Réserver</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carte A03 -->
+      <div class="col-12 col-md-6 col-lg-3 carte-item" data-categorie="Culture">
+        <div class="card h-100">
+          <img src="image/karioun.webp" class="card-img-top" alt="Kerkouane">
+          <div class="card-body d-flex flex-column">
+            <span class="badge bg-info text-dark mb-2 align-self-start">Culture</span>
+            <h2 class="card-title h5">Parcours découverte de Kerkouane - Kerkouane</h2>
+            <p class="text-muted small">Durée : 2 h 30</p>
+            <p class="fw-bold text-primary mt-auto">30 TND</p>
+            <button class="btn btn-outline-primary btn-sm mb-2" onclick="voirDetails('Parcours découverte de Kerkouane - Kerkouane', 'Culture | 2 h 30 | 30 TND', 'Visitez le site archéologique de Kerkouane classé au patrimoine mondial de l UNESCO. Admirez les anciennes maisons, les mosaïques et les thermes face à la mer. La visite comprend aussi l accès au musée.')">Voir les détails</button>
+            <a href="reservation.html" class="btn btn-primary btn-sm">Réserver</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carte A04 -->
+      <div class="col-12 col-md-6 col-lg-3 carte-item" data-categorie="Nature">
+        <div class="card h-100">
+          <img src="image/ron.webp" class="card-img-top" alt="Djebel Abderrahmane">
+          <div class="card-body d-flex flex-column">
+            <span class="badge bg-info text-dark mb-2 align-self-start">Nature</span>
+            <h2 class="card-title h5">Randonnée découverte - Djebel Abderrahmane</h2>
+            <p class="text-muted small">Durée : 3 h</p>
+            <p class="fw-bold text-primary mt-auto">25 TND</p>
+            <button class="btn btn-outline-primary btn-sm mb-2" onclick="voirDetails('Randonnée découverte - Djebel Abderrahmane', 'Nature | 3 h | 25 TND', 'Profitez d une randonnée facile dans les forêts de pins du Djebel Abderrahmane. Le sentier offre une vue panoramique magnifique sur toute la région. Idéal pour respirer l air pur et observer la nature.')">Voir les détails</button>
+            <a href="reservation.html" class="btn btn-primary btn-sm">Réserver</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carte A05 -->
+      <div class="col-12 col-md-6 col-lg-3 carte-item" data-categorie="Nature">
+        <div class="card h-100">
+          <img src="image/litto.webp" class="card-img-top" alt="Littoral Kélibia">
+          <div class="card-body d-flex flex-column">
+            <span class="badge bg-info text-dark mb-2 align-self-start">Nature</span>
+            <h2 class="card-title h5">Circuit du littoral - Kélibia</h2>
+            <p class="text-muted small">Durée : 3 h</p>
+            <p class="fw-bold text-primary mt-auto">40 TND</p>
+            <button class="btn btn-outline-primary btn-sm mb-2" onclick="voirDetails('Circuit du littoral - Kélibia', 'Nature | 3 h | 40 TND', 'Suivez un parcours côtier entre plages de sable fin et rochers au pied du fort de Kélibia. Vous profiterez d une vue exceptionnelle sur la mer turquoise. Une pause détente est prévue face à l horizon.')">Voir les détails</button>
+            <a href="reservation.html" class="btn btn-primary btn-sm">Réserver</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carte A06 -->
+      <div class="col-12 col-md-6 col-lg-3 carte-item" data-categorie="Artisanat">
+        <div class="card h-100">
+          <img src="image/peinture.webp" class="card-img-top" alt="Peinture sur céramique">
+          <div class="card-body d-flex flex-column">
+            <span class="badge bg-info text-dark mb-2 align-self-start">Artisanat</span>
+            <h2 class="card-title h5">Peinture sur céramique - Nabeul</h2>
+            <p class="text-muted small">Durée : 2 h</p>
+            <p class="fw-bold text-primary mt-auto">25 TND</p>
+            <button class="btn btn-outline-primary btn-sm mb-2" onclick="voirDetails('Peinture sur céramique - Nabeul', 'Artisanat | 2 h | 25 TND', 'Initiez-vous à la peinture sur céramique dans un atelier traditionnel à Nabeul. Vous apprendrez à tracer et colorier des motifs géométriques et floraux typiques. Tout le matériel est fourni sur place.')">Voir les détails</button>
+            <a href="reservation.html" class="btn btn-primary btn-sm">Réserver</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carte A07 -->
+      <div class="col-12 col-md-6 col-lg-3 carte-item" data-categorie="Découverte">
+        <div class="card h-100">
+          <img src="image/marrakesh.png" class="card-img-top" alt="Marché local Nabeul">
+          <div class="card-body d-flex flex-column">
+            <span class="badge bg-info text-dark mb-2 align-self-start">Découverte</span>
+            <h2 class="card-title h5">Découverte d'un marché local - Nabeul</h2>
+            <p class="text-muted small">Durée : 1 h 30</p>
+            <p class="fw-bold text-primary mt-auto">15 TND</p>
+            <button class="btn btn-outline-primary btn-sm mb-2" onclick="voirDetails('Découverte d un marché local - Nabeul', 'Découverte | 1 h 30 | 15 TND', 'Baladez-vous au cœur du marché coloré de Nabeul pour découvrir les produits locaux. Vous verrez les étals d épices, d agrumes et d harissa traditionnelle. La visite se termine par une petite dégustation.')">Voir les détails</button>
+            <a href="reservation.html" class="btn btn-primary btn-sm">Réserver</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carte A08 -->
+      <div class="col-12 col-md-6 col-lg-3 carte-item" data-categorie="Découverte">
+        <div class="card h-100">
+          <img src="image/prom.webp" class="card-img-top" alt="Promenade photo Hammamet">
+          <div class="card-body d-flex flex-column">
+            <span class="badge bg-info text-dark mb-2 align-self-start">Découverte</span>
+            <h2 class="card-title h5">Promenade photographique - Hammamet</h2>
+            <p class="text-muted small">Durée : 2 h</p>
+            <p class="fw-bold text-primary mt-auto">30 TND</p>
+            <button class="btn btn-outline-primary btn-sm mb-2" onclick="voirDetails('Promenade photographique - Hammamet', 'Découverte | 2 h | 30 TND', 'Explorez les murs blancs et les portes bleues de la médina d Hammamet avec votre appareil photo ou téléphone. Vous apprendrez à bien cadrer vos images et à jouer avec la lumière du soleil.')">Voir les détails</button>
+            <a href="reservation.html" class="btn btn-primary btn-sm">Réserver</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Modal Bootstrap simple -->
+  <div class="modal fade" id="maModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="titreModal">Titre</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <p class="fw-bold text-primary" id="infosModal"></p>
+          <p id="descModal"></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+          <a href="reservation.html" class="btn btn-primary">Réserver</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-3 mt-5">
+    <p class="mb-0">Cap Bon Explorer - <a href="index.html" class="text-white">Retour à l'accueil</a></p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="act.js"></script>
+</body>
+</html>
